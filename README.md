@@ -3,16 +3,18 @@ Repository to collect and organise the pipeline of spike sorting analyses.
 
 ## 1. Tridesclous (by Sam Garcia)
       - upload all the recordings of the same condition as individual segments
-      - Use **common_ref_removal** to de-noise the recordings.
+      - Use common_ref_removal to de-noise the recordings.
         This will compute the median signal among all the sites uploaded and remove it from each trace.
       - You can use two types of configuration for the probe (requires different .prb files):
-        **Sparse**: all sites are listed in one single channel groups (preferred method)
-        **Dense**: it respects the proper subdivision in channel groups. Each channel group is analysed separately
+        Sparse: all sites are listed in one single channel groups (preferred method)
+        Dense: it respects the proper subdivision in channel groups. Each channel group is analysed separately
       
-      - A nice way of cleaning the clusters and of detecting good spikes from the trash is to use **LDA**.
+      - A nice way of cleaning the clusters and of detecting good spikes from the trash is to use LDA.
         (select clusters --> right click --> feature projection with selection --> LDA)
         This analysis will almost alway nicely cluster and separate all the clusters, so it's not used to confirm clusters.
-        It is used to detect spikes from the trash. You select one of the clusters on which you just did LDA and select also the trash. From here, if the cluster is well isolated from the trash, it is possible to detect spikes that should belong to taht cluster but are still in the trash.
+        It is used to detect spikes from the trash. You select one of the clusters on which you just did LDA and select also 
+        the trash. From here, if the cluster is well isolated from the trash, it is possible to detect spikes that should 
+        belong to taht cluster but are still in the trash.
         
         
 ## 2. Extract spike times and waveforms (Script done)
