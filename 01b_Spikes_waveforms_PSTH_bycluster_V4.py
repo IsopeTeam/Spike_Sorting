@@ -127,7 +127,7 @@ for chan_grp in channel_groups:
                 waveform_info = pd.DataFrame(cc.clusters)
                 waveform_info.to_excel(writer, sheet_name='info')
                 for cluster, idx in zip(pos_clustlist, range(n_clust)):
-                    clust_WF = pd.DataFrame(waveforms[idx,:,:])      
+                    clust_WF = pd.DataFrame(waveforms[idx+1,:,:])      
                     clust_WF.to_excel(writer,sheet_name='cluster {}'.format(cluster))           
         else : 
             print ('No savedir specified : nothing will be saved')
