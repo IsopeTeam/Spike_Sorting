@@ -132,16 +132,15 @@ for chan_grp in channel_groups:
         plt.xlabel('Probe location (micrometers)')
         plt.ylabel('Probe location (micrometers)')
         print(cluster)
-        for loc, prob_loc in zip(range(len(probe_geometry)), probe_geometry): 
+                for loc, prob_loc in zip(range(len(probe_geometry)), probe_geometry): 
             x_offset, y_offset = prob_loc[0], prob_loc[1]
             #base_x = np.arange(0,len(waveforms[1,:,loc]),1)  
-            base_x = np.linspace(-15,15,num=len(waveforms[idx,:,loc])) #Basic x-array for plot, centered
+            base_x = np.linspace(-15,15,num=len(waveforms[idx+1,:,loc])) #Basic x-array for plot, centered
             clust_color = 'C{}'.format(idx)
 
-            wave = waveforms[idx,:,loc]+y_offset
+            wave = waveforms[idx+1,:,loc]+y_offset
             plt.plot(base_x+2*x_offset,wave,color=clust_color)
-            plt.fill_between(base_x+2*x_offset,wave-wf_rms[idx],wave+wf_rms[idx], color=clust_color,alpha=wf_alpha)
-
+            plt.fill_between(base_x+2*x_offset,wave-wf_rms[idx+1],wave+wf_rms[idx+1], color=clust_color,alpha=wf_alpha)
     
         if savedir !=None :
             fig1.savefig('{}/{}_Waveforms_changrp{}_Cluster{}.pdf'.format(savedir,name,chan_grp,cluster))         
