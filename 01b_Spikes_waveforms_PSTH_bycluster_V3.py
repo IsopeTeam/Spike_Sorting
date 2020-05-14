@@ -171,7 +171,7 @@ for chan_grp in channel_groups:
                 
             SPIKES_clust.append(np.asarray(np.ravel(temp_)))
         
-            plt.eventplot(np.ravel(temp_), lineoffsets=seg_num, linelengths=0.5, linewidth=0.5, color=clust_color)
+            ax[0].eventplot(np.ravel(temp_), lineoffsets=seg_num, linelengths=0.5, linewidth=0.5, color=clust_color)
        
         #PSTH
         nbins=int(ep_len*6)
