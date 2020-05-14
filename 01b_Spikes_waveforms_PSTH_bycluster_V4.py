@@ -174,7 +174,7 @@ for chan_grp in channel_groups:
             ax[0].eventplot(np.ravel(temp_), lineoffsets=seg_num, linelengths=0.5, linewidth=0.5, color=clust_color)
        
         #PSTH
-        nbins=int(ep_len*6)
+        nbins=int(ep_len*10)
         plt.style.use('seaborn')
         #ax[1].hist(SPIKES_clust, stacked=True, alpha=0.9)
         ax[1].hist(np.hstack(SPIKES_clust), nbins, alpha=0.9)
@@ -182,8 +182,8 @@ for chan_grp in channel_groups:
         #SAVE THE SPIKE DATA (or not) ---------------------------------------------    
         if savedir != None:
             sorted_spikes = pd.DataFrame(SPIKES_clust,index=seg_list)
-            sorted_spikes.to_excel('{}/{}_SPIKETIMES_aligned_CLUSTER{}_changrp{}.xlsx'.format(savedir,name,cluster,chan_grp),index_label='Segment')
-            plt.savefig('{}/{}_Spike_times_aligned_CLUSTER{}_changrp{}.pdf'.format(savedir,name,cluster,chan_grp))
+            sorted_spikes.to_excel('{}/{}_SPIKETIMES_CLUSTER{}_changrp{}.xlsx'.format(savedir,name,cluster,chan_grp),index_label='Segment')
+            plt.savefig('{}/{}_SPIKES_PSTH_CLUSTER{}_changrp{}.pdf'.format(savedir,name,cluster,chan_grp))
         else : 
             print ('No savedir specified : nothing will be saved')
                         
