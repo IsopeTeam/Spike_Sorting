@@ -109,7 +109,7 @@ for chan_grp in channel_groups:
         plt.xlabel('Probe location (micrometers)')
         plt.ylabel('Probe location (micrometers)')
         print(cluster)
-             for loc, prob_loc in zip(range(len(probe_geometry)), probe_geometry): 
+        for loc, prob_loc in zip(range(len(probe_geometry)), probe_geometry): 
             x_offset, y_offset = prob_loc[0], prob_loc[1]
             #base_x = np.arange(0,len(waveforms[1,:,loc]),1)  
             base_x = np.linspace(-15,15,num=len(waveforms[idx+1,:,loc])) #Basic x-array for plot, centered
