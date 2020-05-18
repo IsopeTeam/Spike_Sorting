@@ -19,10 +19,9 @@ Repository to collect and organise the pipeline of spike sorting analyses.
 ## 2. Extract spike times and waveforms (Script done)
    - It extracts the spike times and waveforms of each cluster and saves them in excel files (1 for all waveforms and 1 for each cluster
       of spikes).
-   - The spike times are plotted as raster plots of each individual trial, all alligned in time.
-      (Modification in progress: a PSTH at the bottom on the raster plot)
+   - The spike times are plotted as raster plots of each individual trial, all alligned in time. Below the raster plot, the PSTH of all the segments together.
       
-## 3. Auto- and Cross-correlogram (Script in progress)
+## 3. Auto- and Cross-correlogram (Script done)
    - Computes the auto or cross-correlogram of the chosen clusters
       
 ## 4. Create database (Script to be done/ Doable by hand)
@@ -33,8 +32,12 @@ Repository to collect and organise the pipeline of spike sorting analyses.
         - Auto- and cross-correlogram 
         - Raster plots of the spike times
         
-## 5. Analyse the database (Script to be done)
+## 5. Analyse the database (Script in progress)
    - Changes in mean firing rate depending on the behavioural task or on the light stimulation
+      In progress:
+      - instantaneous firing rate by segment, the convolved function will be averaged between segments to have the 
+         average function.
+      - "normalize" PSTH by bin size to have an estimation of the firing rate (to be compared with previous method)
    - Covariance of the firing rate between clusters
       
 ## 6. Phase-Locking analysis (Script done, by Lilian)
